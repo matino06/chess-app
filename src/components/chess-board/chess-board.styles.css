@@ -1,0 +1,14 @@
+.chess-board {
+  margin: 10vh auto;
+  background-color: #ffffff;
+  height: 50rem;
+  width: 50rem;
+  border-radius: 2%;
+  box-shadow: 5px 10px 25px #27234328;
+  text-align: center;
+}
+
+.chess-board-container {
+  padding: 3rem;
+  display: flex;
+}

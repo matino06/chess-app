@@ -1,0 +1,24 @@
+.white-piece {
+  position: absolute;
+  right: 1rem;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #ffffff;
+}
+
+.shadow {
+  position: absolute;
+  top: -0.1rem;
+  right: 0.7rem;
+  font-size: 3.8rem;
+  margin-top: 0.8rem;
+  color: #27234310;
+}
+
+.black-piece {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #272343;
+}

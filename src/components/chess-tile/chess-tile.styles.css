@@ -1,0 +1,15 @@
+.chess-tile {
+  position: relative;
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: #e3f6f5;
+  outline: 1px solid #bae8e8;
+}
+
+.black {
+  background-color: #bae8e8;
+}
+
+.yellow {
+  background-color: #ebf8344b;
+}
