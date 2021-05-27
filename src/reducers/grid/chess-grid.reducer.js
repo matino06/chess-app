@@ -21,18 +21,26 @@ const chessGridReducer = (state, action) => {
   }
 };
 
-const reduceGrid = (id, posiblePositions, grid) => {
+const reduceGrid = (id, posiblePositionsGrid, grid) => {
+  let posiblePositions = [];
+
+  posiblePositionsGrid.map((row, rowId) => {
+    row.map((x, colId) => {
+      if (id === x.id) {
+        posiblePositions = x.posiblePositions
+      }
+    })
+  })
+
   posiblePositions.map((position) => {
     grid.map((row, rowId) => {
       row.map((x, colId) => {
-        if (rowId == position[0] && colId == position[1]) {
+        if (rowId === position[0] && colId === position[1]) {
           grid[rowId][colId].posiblePosition = true
         }
       });
     });
   });
-
-  console.log(grid, 'func')
 
   return grid
 };

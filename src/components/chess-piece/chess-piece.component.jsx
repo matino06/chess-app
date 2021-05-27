@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer,  useEffect } from "react";
 
 import {
   FaChessPawn,
@@ -11,11 +11,21 @@ import {
 
 import { ChessGridContext, DispatchContext } from "../../contexts/grid/grid.context";
 
+import posiblePositionsReducer from '../../reducers/posible-positions/posible-positions.reducer';
+
 import "./chess-piece.styles.css";
 
-const ChessTile = ({ piece, position, posiblePositions }) => {
+const ChessTile = ({ piece, position }) => {
   const chessGrid = useContext(ChessGridContext);
   const dispatch = useContext(DispatchContext);
+  const [posiblePositions, dispatchPosible] = useReducer(
+    posiblePositionsReducer,
+    chessGrid
+  );
+
+  useEffect(() => {
+    dispatchPosible({ grid: chessGrid });
+  }, [chessGrid]);
 
   return (() => {
     switch (piece.simbol) {
@@ -56,7 +66,6 @@ const ChessTile = ({ piece, position, posiblePositions }) => {
             onClick={() =>
               dispatch({
                 type: "n",
-                position: position,
                 id: piece.id,
                 posiblePositions: posiblePositions,
                 grid: chessGrid
